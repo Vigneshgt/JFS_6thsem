@@ -1,0 +1,4 @@
+com\skillnext2\Student.class
+com\skillnext2\StudentDAO.class
+com\skillnext2\App.class
+com\skillnext2\HibernateUtil.class

@@ -1,0 +1,69 @@
+:root{
+  --bg:#f6f8fa;
+  --card:#ffffff;
+  --accent:#0066ff;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.06);
+  --text:#0b1220;
+}
+[data-theme="dark"]{
+  --bg:#0b0f14;
+  --card:#0f1720;
+  --accent:#4f9dff;
+  --muted:#93a1b3;
+  --text:#e6eef8;
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);margin:0;color:var(--text);-webkit-font-smoothing:antialiased}
+.site-header{display:flex;align-items:center;gap:12px;padding:12px 20px;background:var(--card);box-shadow:var(--shadow);position:sticky;top:0;z-index:20}
+.brand{font-weight:700;font-size:1.25rem;color:var(--accent)}
+.search-bar{flex:1}
+.search-bar input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(100,120,150,0.12);background:transparent;color:var(--text)}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon{background:transparent;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+.profile select{padding:6px;border-radius:8px;background:transparent;border:1px solid rgba(100,120,150,0.12);color:var(--text)}
+.container{display:flex;gap:20px;padding:20px;max-width:1200px;margin:20px auto}
+.filters{width:240px;background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.filters h3{margin:0 0 8px}
+.filters ul{list-style:none;padding:0;margin:0}
+.filters li{margin-bottom:8px}
+.catBtn{width:100%;text-align:left;padding:10px;border-radius:8px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.profile-summary{margin-top:16px;padding-top:12px;border-top:1px solid rgba(100,120,150,0.06)}
+.articles{flex:1}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;min-height:220px}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card h4{margin:0;font-size:1.05rem}
+.card .meta{color:var(--muted);font-size:0.9rem}
+.card .snippet{color:var(--muted);font-size:0.95rem}
+.actions{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.primary{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+.secondary{background:transparent;border:1px solid rgba(100,120,150,0.08);padding:8px 10px;border-radius:8px;cursor:pointer}
+.like, .dislike{background:transparent;border:1px solid rgba(100,120,150,0.08);padding:6px 8px;border-radius:8px;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,0.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal.hidden{display:none}
+.modal-content{background:var(--card);width:100%;max-width:1000px;border-radius:12px;padding:16px;display:flex;gap:16px;position:relative}
+.modal-close{position:absolute;right:20px;top:12px;background:transparent;border:0;font-size:24px;cursor:pointer;color:var(--muted)}
+.modal-content img{width:45%;height:360px;object-fit:cover;border-radius:8px}
+.modal-info{flex:1}
+.meta-row{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+.action-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.left{display:flex;gap:8px;align-items:center}
+.cart-panel{position:fixed;right:24px;top:88px;width:360px;background:var(--card);padding:12px;border-radius:12px;box-shadow:var(--shadow);z-index:40}
+.cart-panel.hidden{display:none}
+.cart-items{max-height:400px;overflow:auto}
+.cart-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(100,120,150,0.04)}
+.cart-item img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px}
+.site-footer{text-align:center;padding:24px;color:var(--muted)}
+
+@media (max-width:900px){
+  .container{flex-direction:column;padding:12px}
+  .filters{width:100%}
+  .modal-content{flex-direction:column}
+  .modal-content img{width:100%;height:220px}
+  .cart-panel{right:12px;left:12px;width:auto}
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NewsMate — Personalized AI News</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">NewsMate</div>
+
+    <div class="search-bar">
+      <input id="searchInput" placeholder="Search news, e.g. climate, AI, Brexit" />
+    </div>
+
+    <div class="header-actions">
+      <div class="profile">
+        <select id="userSelect" aria-label="Select user"></select>
+        <button id="newUserBtn" title="Create user">＋</button>
+      </div>
+      <button id="themeToggle" class="icon" aria-pressed="false" title="Toggle theme">🌙</button>
+      <button id="savedToggle" class="icon" title="Saved articles">🔖 <span id="savedCount">0</span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="filters" aria-label="Filters">
+      <h3>Categories</h3>
+      <ul id="catList">
+        <li><button class="catBtn" data-cat="all">All</button></li>
+        <li><button class="catBtn" data-cat="world">World</button></li>
+        <li><button class="catBtn" data-cat="tech">Tech</button></li>
+        <li><button class="catBtn" data-cat="business">Business</button></li>
+        <li><button class="catBtn" data-cat="sports">Sports</button></li>
+        <li><button class="catBtn" data-cat="entertainment">Entertainment</button></li>
+      </ul>
+
+      <section class="profile-summary" aria-live="polite">
+        <h4>Profile</h4>
+        <div id="profileInfo">— no user selected —</div>
+        <button id="viewRec" class="primary">View Recommendations</button>
+      </section>
+    </aside>
+
+    <section class="articles" aria-live="polite">
+      <div class="toolbar">
+        <div class="sort">
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="personal">Personalized</option>
+            <option value="latest">Latest</option>
+            <option value="popular">Popular</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="articleGrid" class="grid" role="list"></div>
+    </section>
+  </main>
+
+  <div id="articleModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+      <img id="modalImg" src="" alt="" />
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <div class="meta-row">
+          <span id="modalSource"></span> · <span id="modalDate"></span>
+        </div>
+        <p id="modalBody"></p>
+        <div class="action-row">
+          <div class="left">
+            <button id="likeBtn" class="like">👍 <span id="likeCount">0</span></button>
+            <button id="dislikeBtn" class="dislike">👎 <span id="dislikeCount">0</span></button>
+            <button id="saveBtn" class="secondary">🔖 Save</button>
+          </div>
+          <div class="right">
+            <button id="openSource" class="primary">Open Source</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside id="savedPanel" class="cart-panel hidden" aria-hidden="true">
+    <h3>Saved Articles</h3>
+    <div id="savedItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <button id="clearSaved" class="secondary">Clear Saved</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>© NewsMate — Demo personalized news UI</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
